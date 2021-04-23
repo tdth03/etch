@@ -2,7 +2,7 @@ const grid = document.querySelector('#container');
 const resetBtn = document.getElementById('reset');
 const gridSizeBtn = document.getElementById('grid-size');
 const colorChangeBtn = document.querySelector('#color');
-let nInput = document.querySelector('.input');
+let changeText = document.querySelector("#color");
 const maxWidth = 500;
 
 
@@ -46,8 +46,7 @@ function blackColor(e) {
     e.target.style.backgroundColor = "black";
 }
 
-function changeColor(e) {
-    let changeText = document.querySelector("#color");
+function changeColor() {
     if (changeText.innerText === "Random") {
     changeText.innerText = "Black";
     grid.addEventListener("mouseover", randomColor);
@@ -57,6 +56,9 @@ function changeColor(e) {
 
 function resetBoard() {
     console.log("n");
+    changeText.innerText = "Random";
     grid.addEventListener("mouseover", blackColor);
+    let gridPixels = container.querySelectorAll('div');
+    gridPixels.forEach(gridPixel => gridPixel.style.backgroundColor = '#ffffff');
 }
 
