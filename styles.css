@@ -1,15 +1,24 @@
-.heading {
-  font-size: 50px;
+* {
+  font-family: 'Sue Ellen Francisco', cursive !important;
+}
+
+body {
+  background-color:dodgerblue;
+}
+
+.title-head {
+  font-size: 100px;
   text-align: center;
+  margin: 50px 0 50px 0;
+  
 }
 
 #container {
   width: 432px;
   height: 432px;
-  border: 1px solid black;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
+  border: 4px solid black;
+  margin: 50px auto 50px auto;
+  box-shadow: 10px 5px 5px rgb(255, 41, 41);
 }
 
 #container div {
@@ -19,12 +28,26 @@
 
 .cell {
     border: 1px solid black;
+    background-color: white;
     min-width: 25px;
     min-height: 25px;
     display: inline-block;
   }
 
-  .input {
+  .area-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 50px 0;
+  }
+
+  .input, .button {
     display: inline-block;
-    margin: auto;
+    margin: 5px 5px 5px 5px;
+    box-shadow: 10px 5px 5px rgb(255, 41, 41);
+    font-size: 30px;
+  }
+
+  .input {
+    color: rgba(0, 0, 0, 0.5);
   }
