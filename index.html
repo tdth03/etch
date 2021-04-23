@@ -14,11 +14,11 @@
 <body>
     <h1 class="title-head">Etch-A-Sketch</h1>
     <div class = area-input>
-        <input class="input" value="Enter Number">
+        <input class="input" value="Enter Number" onfocus="this.value = this.value=='Enter Number'?'':this.value;" onblur="this.value = this.value==''?'Enter Number':this.value;">
         <button class="button" id="grid-size">Change Grid Size</button>
-        <button class="button">Reset Grid</button>
+        <button class="button" id="reset">Reset Grid</button>
     </div>
-    <div id="container"></div>
+    <div id="dad"><div id="container"></div></div>
     
 </body>
 </html>

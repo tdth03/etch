@@ -14,40 +14,61 @@ body {
 }
 
 #container {
-  width: 432px;
-  height: 432px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
   border: 4px solid black;
-  margin: 50px auto 50px auto;
+  margin: 10px auto 10px auto;
   box-shadow: 10px 5px 5px rgb(255, 41, 41);
 }
 
-#container div {
+.box {
+  background: #ffffff;
+  border-left: #000000 1px solid;
+  border-bottom: #000000 1px solid;
   display: inline-block;
-  vertical-align: top;
+  box-sizing: border-box;
 }
 
-.cell {
-    border: 1px solid black;
-    background-color: white;
-    min-width: 25px;
-    min-height: 25px;
-    display: inline-block;
+.row {
+  display: block;
+  width: 100%;
+  font-size: 0;
+}
+
+.row:first-child {
+  border-top: #000000 1px solid;
+}
+
+.row .box:last-child {
+  border-right: #000000 1px solid;
+}
+
+.area-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0 50px 0;
   }
 
-  .area-input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 0 50px 0;
+#dad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
 
-  .input, .button {
-    display: inline-block;
-    margin: 5px 5px 5px 5px;
-    box-shadow: 10px 5px 5px rgb(255, 41, 41);
-    font-size: 30px;
+.input, .button {
+  display: inline-block;
+  margin: 5px 10px 5px 10px;
+  box-shadow: 10px 5px 5px rgb(255, 41, 41);
+  font-size: 30px;
+  border: 1px solid black;
   }
 
-  .input {
-    color: rgba(0, 0, 0, 0.5);
+.button {
+  background-color: rgb(201, 196, 196);
+  }
+
+.input {
+  color: rgba(0, 0, 0, 0.5);
   }

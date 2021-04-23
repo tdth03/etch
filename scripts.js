@@ -1,28 +1,45 @@
-const grid = document.querySelector('.container')
-let n = '';
-let area = '';
+const grid = document.querySelector('#container');
+const resetBtn = document.getElementById('reset');
+const gridSizeBtn = document.getElementById('grid-size');
+let nInput = document.querySelector('.input');
+const maxWidth = 500;
 
 
-function gridSizeInput() {
+window.addEventListener("load", createDefaultGrid);
 
+
+function createDefaultGrid() {
+    /* createGrid(16); */
+    createCells(16);
 }
 
-function createGrid() {
-    n = 16;
-    area = Math.pow(n, 2);
+/* function createGrid(n) {
+    grid.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
+} */
 
-    if ( n >= 100 ) {
-        alert('Select A Number Less Than 100.');
-    } else {
-    for (let i = 0; i < area; i++) {
-        const div = document.createElement('div');
-        div.classList.add('cell');
-        div.addEventListener('mouseover', function(event){
-            event.target.style.backgroundColor = 'black';
-        })
-        container.appendChild(div);
-    }
+function createCells(n) {
+    for (let i = 0; i < n; i++) {
+        let row = document.createElement('div');
+        row.className = "row";
+        for (let j = 0; j < n; j++) {
+            let box = document.createElement('div');
+            box.className = "box";
+            row.appendChild(box);
+        }
+        grid.appendChild(row);
+        grid.addEventListener("mouseover", changeColor);
+        let boxes = document.getElementsByClassName("box");
+        for (k = 0; k < boxes.length; k++) {
+            boxes[k].style.width = maxWidth / n + "px";
+            boxes[k].style.height = maxWidth / n + "px";
+        }
     }
 }
 
-createGrid();
+function changeColor(e) {
+    const color1 = Math.floor(Math.random() * 256);
+    const color2 = Math.floor(Math.random() * 256);
+    const color3 = Math.floor(Math.random() * 256);
+    e.target.style.backgroundColor = `rgb(${color1}, ${color2}, ${color3})`;
+}
+
