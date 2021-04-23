@@ -1,6 +1,15 @@
+.heading {
+  font-size: 50px;
+  text-align: center;
+}
+
 #container {
-  width: 1000px;
-  height: 1000px;
+  width: 432px;
+  height: 432px;
+  border: 1px solid black;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #container div {
@@ -13,4 +22,9 @@
     min-width: 25px;
     min-height: 25px;
     display: inline-block;
+  }
+
+  .input {
+    display: inline-block;
+    margin: auto;
   }

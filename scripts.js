@@ -1,7 +1,11 @@
 const grid = document.querySelector('.container')
+let n = '';
+let area = '';
 
-createGrid = () => {
-    for (let i = 0; i < 256; i++) {
+function createGrid() {
+    n = 16;
+    area = Math.pow(n, 2);
+    for (let i = 0; i < area; i++) {
         const div = document.createElement('div');
         div.classList.add('cell');
         div.addEventListener('mouseover', function(event){
