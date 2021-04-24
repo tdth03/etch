@@ -53,8 +53,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px 0 50px 0;
+  margin: 50px 0 0px 0;
   }
+
+.default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
 
 #dad {
   display: flex;
@@ -74,6 +81,7 @@ body {
 
 .button {
   background-color: rgb(201, 196, 196);
+  min-width: 200px;
   }
 
 .button:hover {
@@ -93,6 +101,7 @@ body {
 .input {
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
+  max-width: 120px;
   }
 
 .input:focus {
