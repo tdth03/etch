@@ -1,5 +1,6 @@
 const grid = document.querySelector('#container');
 const resetBtn = document.getElementById('reset');
+const defaultBtn = document.getElementById('default-button');
 const gridSizeBtn = document.getElementById('grid-size');
 const colorChangeBtn = document.querySelector('#color');
 const gridSizeInput = document.querySelector('.input');
@@ -11,6 +12,7 @@ const maxWidth = 500;
 and change grid size on Enter key usage within grid size input field. */
 window.addEventListener("load", createDefaultGrid);
 resetBtn.addEventListener("click", resetBoard);
+defaultBtn.addEventListener("click", resetDefaultSize);
 colorChangeBtn.addEventListener("click", changeColor);
 gridSizeBtn.addEventListener("click", changeGrid);
 gridSizeInput.addEventListener("keyup", function(event) {
@@ -88,10 +90,18 @@ function changeColor() {
 /*Changes inner text of Color Selecton Button back to default "Random". Removes the random color event listener and adds the black color even listener. 
 Changes the background color for all boxes back to default white. */
 function resetBoard() {
-    console.log("n");
     changeText.innerText = "Random";
     grid.removeEventListener("mouseover", randomColor);
     grid.addEventListener("mouseover", blackColor);
     let gridPixels = container.querySelectorAll('div');
     gridPixels.forEach(gridPixel => gridPixel.style.backgroundColor = '#ffffff');
+}
+
+function resetDefaultSize() {
+    boxes = document.getElementsByClassName('box');
+    if (boxes.style.width !== "31.25px") {
+        while (grid.lastElementChild) {
+            grid.removeChild(grid.lastElementChild);
+        } createCells(16);
+    } else console.log("Idiot hit the wrong button.")
 }
