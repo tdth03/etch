@@ -50,13 +50,17 @@ function changeColor() {
     if (changeText.innerText === "Random") {
     changeText.innerText = "Black";
     grid.addEventListener("mouseover", randomColor);
-    } else changeText.innerText = "Random";
-    grid.addEventListener("mouseover", blackColor);
+    } else {
+        changeText.innerText = "Random";
+        grid.removeEventListener("mouseover", randomColor);
+        grid.addEventListener("mouseover", blackColor);
+}
 }
 
 function resetBoard() {
     console.log("n");
     changeText.innerText = "Random";
+    grid.removeEventListener("mouseover", randomColor);
     grid.addEventListener("mouseover", blackColor);
     let gridPixels = container.querySelectorAll('div');
     gridPixels.forEach(gridPixel => gridPixel.style.backgroundColor = '#ffffff');
