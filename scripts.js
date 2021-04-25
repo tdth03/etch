@@ -77,11 +77,11 @@ function blackColor(e) {
 
 /*Changes the inner text of the Color Selector Button depending on the current inner text. Adds the event listener for randomColor in order to switch the mouseover trail between colors.*/
 function changeColor() {
-    if (changeText.innerText === "Random") {
+    if (changeText.innerText === "Random Colors") {
     changeText.innerText = "Black";
     grid.addEventListener("mouseover", randomColor);
     } else {
-        changeText.innerText = "Random";
+        changeText.innerText = "Random Colors";
         grid.removeEventListener("mouseover", randomColor);
         grid.addEventListener("mouseover", blackColor);
 }
@@ -90,7 +90,7 @@ function changeColor() {
 /*Changes inner text of Color Selecton Button back to default "Random". Removes the random color event listener and adds the black color even listener. 
 Changes the background color for all boxes back to default white. */
 function resetBoard() {
-    changeText.innerText = "Random";
+    changeText.innerText = "Random Colors";
     grid.removeEventListener("mouseover", randomColor);
     grid.addEventListener("mouseover", blackColor);
     let gridPixels = container.querySelectorAll('div');
@@ -99,7 +99,7 @@ function resetBoard() {
 
 function resetDefaultSize() {
     boxes = document.getElementsByClassName('box');
-    if (boxes.style.width !== "31.25px") {
+    if (boxes.length !== 16 ) {
         while (grid.lastElementChild) {
             grid.removeChild(grid.lastElementChild);
         } createCells(16);
