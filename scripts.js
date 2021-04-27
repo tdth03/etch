@@ -14,6 +14,7 @@ window.addEventListener("load", createDefaultGrid);
 resetBtn.addEventListener("click", resetBoard);
 defaultBtn.addEventListener("click", resetDefaultSize);
 colorChangeBtn.addEventListener("click", changeColor);
+eraserBtn.addEventListener("click", whiteColor);
 gridSizeBtn.addEventListener("click", changeGrid);
 gridSizeInput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
@@ -75,6 +76,11 @@ function blackColor(e) {
     e.target.style.backgroundColor = "black";
 }
 
+/*Sets the target background color to White*/
+function whiteColor(e) {
+    e.target.style.backgroundColor = "#ffffff";
+}
+
 /*Changes the inner text of the Color Selector Button depending on the current inner text. Adds the event listener for randomColor in order to switch the mouseover trail between colors.*/
 function changeColor() {
     if (changeText.innerText === "Random Colors") {
@@ -97,11 +103,15 @@ function resetBoard() {
     gridPixels.forEach(gridPixel => gridPixel.style.backgroundColor = '#ffffff');
 }
 
+
+/*Resets the board to the default 16x16 grid. Alerts user if the board is already the default size. */
 function resetDefaultSize() {
     boxes = document.getElementsByClassName('box');
-    if (boxes.length !== 16 ) {
+    if (boxes.length === 256) {
+        alert("It's already the default size, idiot.")
+    } else {
         while (grid.lastElementChild) {
             grid.removeChild(grid.lastElementChild);
         } createCells(16);
-    } else console.log("Idiot hit the wrong button.")
+    } 
 }
